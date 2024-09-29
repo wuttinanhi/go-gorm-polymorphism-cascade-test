@@ -1,0 +1,50 @@
+
+	// // create a reply2 for the reply1
+	// reply2 := &Reply{
+	// 	User:    user,
+	// 	Content: "Reply Content",
+
+	// 	ParentID:   reply1.ID,
+	// 	ParentType: "Reply",
+	// 	Parent:     reply1,
+	// }
+	// err = db.Create(reply2).Error
+	// PanicIfError(err)
+
+	// // create a reply2 for the reply1 (again)
+	// reply2_2 := &Reply{
+	// 	User:    user,
+	// 	Content: "Reply Content",
+
+	// 	ParentID:   reply1.ID,
+	// 	ParentType: "Reply",
+	// 	Parent:     reply1,
+	// }
+	// err = db.Create(reply2_2).Error
+	// PanicIfError(err)
+
+	// // create a reply3 for the reply2
+	// // expect an error because reply can't have a parent reply
+	// reply3 := &Reply{
+	// 	User:    user,
+	// 	Content: "Reply Content",
+
+	// 	ParentID:   reply2.ID,
+	// 	ParentType: "Reply",
+	// 	Parent:     reply2,
+	// }
+	// err = db.Create(reply3).Error
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+
+	// // list all replies for the post
+	// // var replies []*Reply
+	// // err = db.Where("parent_id = ? AND parent_type = ?", post.ID, "Post").Find(replies).Error
+	// // PanicIfError(err)
+
+	// // list all replies for the post by using preload
+	// var replies []*Reply
+	// err = db.Model(&Reply{}).Preload("Replies.Replies").Find(&replies).Error
+	// PanicIfError(err)
+	// PrettyPrintReply(replies, "-")
